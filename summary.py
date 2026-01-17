@@ -27,8 +27,8 @@ except ImportError:
 AUTHOR_INFO = {
     "Name": "Sai Annam",
     "Handle": "mr_ask_chay / otaku0304",
-    "StartMyDev": "Automation script for full-stack startup",
-    "PDF Password Remover": "Angular + Flask security tool",
+    "StartMyDev": "https://start-my-dev-dashboard.vercel.app/",
+    "PDF Password Remover": "https://pdf-fe-kappa.vercel.app/",
     "Angular i18n SPA": "Multilingual Single Page Application Demo"
 }
 

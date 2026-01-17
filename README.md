@@ -32,9 +32,9 @@ git commit-summary
 ```
 
 ## 🌟 Previous Projects by Author
-*   **PDF Password Remover**: A secure Angular + Flask application.
+*   **[PDF Password Remover](https://pdf-fe-kappa.vercel.app/)**: A secure Angular + Flask application.
+*   **[StartMyDev Dashboard](https://start-my-dev-dashboard.vercel.app/)**: Advanced automation for full-stack environments.
 *   **Angular i18n SPA**: Best-in-class Internationalization demo.
-*   **StartMyDev**: Advanced automation for full-stack environments.
 
 ---
 
