@@ -30,4 +30,4 @@ jobs:
         cd node
         npm publish --access public
       env:
-        NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN_GIT_COMMIT_SUMMARY }}
+        NODE_AUTH_TOKEN: ${{ secrets.TOKEN_GIT_COMMIT_SUMMARY_NPM }}
