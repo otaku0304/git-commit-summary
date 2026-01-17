@@ -14,8 +14,10 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
+        cd python
         pip install -r requirements.txt
         pip install .
     - name: Test execution
       run: |
-        cat README.md | git-commit-summary || echo "Success (error code expected for non-diff input but binary ran)"
+        # Use simple text to test binary execution
+        echo "diff --git a/test.py b/test.py" | git-commit-summary || echo "Binary executed but failed on input (expected)"
