@@ -1,11 +1,35 @@
 # 📊 Git Commit Summary Tool
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Python 3.6+](https://img.shields.io/badge/python-3.6+-blue.svg)](https://www.python.org/downloads/)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com)
+
 A powerful, high-performance CLI tool to summarize git commits with rich visual feedback.
 
 > **Author**: Sai Annam (mr_ask_chay)  
 > **Handle**: @otaku0304  
 
 ---
+
+## 📦 Installation
+
+You can install this tool directly from the source to use it globally on your system.
+
+```bash
+# Clone the repository
+git clone https://github.com/otaku0304/git-commit-summary.git
+cd git-commit-summary
+
+# Install globally
+pip install .
+```
+
+Once installed, you can use it as a native git command!
+
+```bash
+# This now works anywhere in your terminal
+git commit-summary
+```
 
 ## 🌟 Previous Projects by Author
 *   **PDF Password Remover**: A secure Angular + Flask application.
@@ -16,8 +40,12 @@ A powerful, high-performance CLI tool to summarize git commits with rich visual 
 
 ## 🚀 Usage
 
-Simply pipe your git command into the python script:
+If you installed it globally:
+```powershell
+git show HEAD | git-commit-summary
+```
 
+Or run via python directly:
 ```powershell
 git show HEAD | python summary.py
 ```
