@@ -1,7 +1,8 @@
 # 📊 Git Commit Summary Tool
 
+[![PyPI Version](https://img.shields.io/pypi/v/git-commit-summary.svg)](https://pypi.org/project/git-commit-summary/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Python 3.6+](https://img.shields.io/badge/python-3.6+-blue.svg)](https://www.python.org/downloads/)
+[![Python 3.6+](https://img.shields.io/badge/python-3.6+-blue.svg)](https://pypi.org/project/git-commit-summary/)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com)
 
 A powerful, high-performance CLI tool to summarize git commits with rich visual feedback.
@@ -11,47 +12,40 @@ A powerful, high-performance CLI tool to summarize git commits with rich visual 
 
 ---
 
-## 📦 Installation
+## 🚀 Quick Start for Users (No Code Required)
 
-You can install this tool directly from the source to use it globally on your system.
-
-```bash
-# Clone the repository
-git clone https://github.com/otaku0304/git-commit-summary.git
-cd git-commit-summary
-
-# Install globally
-pip install .
-```
-
-Once installed, you can use it as a native git command!
+You do **NOT** need to clone this repository to use the tool. Simply install it via pip:
 
 ```bash
-# This now works anywhere in your terminal
-git commit-summary
+pip install git-commit-summary
 ```
 
-## 🌟 Previous Projects by Author
-*   **[PDF Password Remover](https://pdf-fe-kappa.vercel.app/)**: A secure Angular + Flask application.
-*   **[StartMyDev Dashboard](https://start-my-dev-dashboard.vercel.app/)**: Advanced automation for full-stack environments.
-*   **Angular i18n SPA**: Best-in-class Internationalization demo.
+Once installed, the command `git-commit-summary` is available globally in your terminal. You can use it in any of your projects immediately.
 
----
+### Usage
+```bash
+# 1. Go to your project folder
+cd my-cool-project
 
-## 🚀 Usage
-
-If you installed it globally:
-```powershell
+# 2. Run the summary command
 git show HEAD | git-commit-summary
 ```
 
-Or run via python directly:
-```powershell
-git show HEAD | python summary.py
+---
+
+## 🛠️ For Developers (Contributing)
+
+Clone this repository only if you want to contribute to the source code.
+
+```bash
+git clone https://github.com/otaku0304/git-commit-summary.git
+cd git-commit-summary
+pip install -r requirements.txt
 ```
 
-## ✨ Features
+---
 
+## ✨ Features
 *   **Rich UI**: Beautiful terminal output with colors and clear formatting.
 *   **Smart Analysis**: 
     *   Tracks files changed and file types (e.g., .py, .js).
