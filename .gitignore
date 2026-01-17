@@ -1,0 +1,25 @@
+# IDEs and Editors
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.env
+
+# Testing and Logs
+test.diff
+*.log
+coverage.xml
+.coverage
+
+# System
+.DS_Store
+Thumbs.db
