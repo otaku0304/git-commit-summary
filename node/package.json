@@ -1,0 +1,29 @@
+{
+  "name": "git-commit-summary",
+  "version": "1.0.0",
+  "description": "A powerful CLI tool to summarize git commits with rich visual feedback.",
+  "main": "index.js",
+  "bin": {
+    "git-commit-summary": "index.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "git",
+    "commit",
+    "summary",
+    "cli",
+    "developer-tools"
+  ],
+  "author": "Sai Annam <contact@mraskchay.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/otaku0304/git-commit-summary.git"
+  },
+  "bugs": {
+    "url": "https://github.com/otaku0304/git-commit-summary/issues"
+  },
+  "homepage": "https://github.com/otaku0304/git-commit-summary#readme"
+}
