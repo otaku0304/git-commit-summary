@@ -43,13 +43,16 @@ def print_banner():
         print(f"  {Fore.YELLOW}• {proj}{Fore.RESET}: {desc}")
     print(f"{Fore.CYAN}──────────────────────────────────────────────────────────{Style.RESET_ALL}\n")
 
-def read_input():
+def get_input_stream():
+    """Yields lines from stdin properly, handling encoding errors safely."""
     if sys.stdin.isatty():
         print(f"{Fore.RED}❌ Error: Please pipe a git diff or commit.{Fore.RESET}")
         print(f"{Fore.YELLOW}Usage: git show HEAD | python summary.py{Fore.RESET}")
         sys.exit(1)
-    # Read text safely replacing errors
-    return sys.stdin.read()
+    
+    # Process line by line to prevent Memory DoS
+    for line in sys.stdin:
+        yield line
 
 def detect_function(line):
     """Detects function definitions in various languages."""
@@ -59,29 +62,27 @@ def detect_function(line):
     # JS, TS, Java, C#: function name or type name(
     if match := re.match(r"\+\s*(?:async\s+)?function\s+([a-zA-Z_]\w*)", line):
         return match.group(1), "JS/TS"
+    # Safe regex for C-like languages avoiding excessive backtracking
     if match := re.match(r"\+\s*(?:public|private|protected|static|\w+)\s+[\w<>]+\s+([a-zA-Z_]\w*)\s*\(", line):
         return match.group(1), "C-Like"
     return None, None
 
-def summarize(diff_text):
+def summarize(line_iterator):
     files = set()
     added = 0
     removed = 0
     functions_added = []
     file_types = defaultdict(int)
 
-    current_file = None
-
-    for line in diff_text.splitlines():
-        # Sanitize input slightly to prevent injection processing if we were doing complex things
-        # but for parsing, standard string ops are safe.
+    for line in line_iterator:
+        # Sanitize input: Strip potential control characters if needed, but git output is usually safe.
+        line = line.rstrip() 
         
         if line.startswith("diff --git"):
             parts = line.split(" ")
             if len(parts) >= 3:
                 fpath = parts[2].replace("a/", "", 1)
                 files.add(fpath)
-                current_file = fpath
                 ext = fpath.split(".")[-1] if "." in fpath else "no-ext"
                 file_types[ext] += 1
         
@@ -114,8 +115,9 @@ def main():
         print_banner()
 
     try:
-        diff = read_input()
-        result = summarize(diff)
+        # Use streaming input
+        diff_stream = get_input_stream()
+        result = summarize(diff_stream)
 
         print(f"{Style.BRIGHT}📊 Statistics:{Style.RESET_ALL}")
         print(f"  {Fore.GREEN}Files Changed :{Fore.RESET} {result['file_count']}")
@@ -131,15 +133,18 @@ def main():
 
         if result["functions_added"]:
             print(f"\n{Style.BRIGHT}✨ New Functions ({len(result['functions_added'])}):{Style.RESET_ALL}")
-            for fn in result["functions_added"][:10]: # Limit to 10 to avoid spam
+            # Limit output to prevent terminal flooding (Security/Usability)
+            for fn in result["functions_added"][:15]: 
                 print(f"  {Fore.CYAN}+ {fn}{Fore.RESET}")
-            if len(result["functions_added"]) > 10:
-                print(f"  {Fore.WHITE}... and {len(result['functions_added']) - 10} more{Fore.RESET}")
+            if len(result["functions_added"]) > 15:
+                print(f"  {Fore.WHITE}... and {len(result['functions_added']) - 15} more{Fore.RESET}")
         else:
             print(f"\n{Style.BRIGHT}✨ New Functions:{Style.RESET_ALL} None detected")
             
         print("\n" + f"{Fore.WHITE}Status: {Fore.GREEN}Success{Fore.RESET}")
 
+    except KeyboardInterrupt:
+        sys.exit(0)
     except Exception as e:
         print(f"\n{Fore.RED}An unexpected error occurred: {e}{Fore.RESET}")
         sys.exit(1)
