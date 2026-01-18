@@ -1,6 +1,6 @@
 {
   "name": "otaku-git-commit-summary",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A powerful CLI tool to summarize git commits with rich visual feedback.",
   "main": "index.js",
   "bin": {
