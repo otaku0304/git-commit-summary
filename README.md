@@ -1,8 +1,10 @@
 # 📊 Git Commit Summary Tool
 
 [![PyPI Version](https://img.shields.io/pypi/v/git-commit-summary.svg)](https://pypi.org/project/git-commit-summary/)
+[![NPM Version](https://img.shields.io/npm/v/otaku-git-commit-summary.svg)](https://www.npmjs.com/package/otaku-git-commit-summary)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Python 3.6+](https://img.shields.io/badge/python-3.6+-blue.svg)](https://pypi.org/project/git-commit-summary/)
+[![Node 18+](https://img.shields.io/badge/node-18+-green.svg)](https://www.npmjs.com/package/otaku-git-commit-summary)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com)
 
 A powerful, high-performance CLI tool to summarize git commits with rich visual feedback.
@@ -14,10 +16,16 @@ A powerful, high-performance CLI tool to summarize git commits with rich visual 
 
 ## 🚀 Quick Start for Users (No Code Required)
 
-You do **NOT** need to clone this repository to use the tool. Simply install it via pip:
+You do **NOT** need to clone this repository to use the tool. Simply install it via your preferred package manager:
 
+### Python (via PyPI)
 ```bash
 pip install git-commit-summary
+```
+
+### Node.js (via NPM)
+```bash
+npm install -g otaku-git-commit-summary
 ```
 
 Once installed, the command `git-commit-summary` is available globally in your terminal. You can use it in any of your projects immediately.
