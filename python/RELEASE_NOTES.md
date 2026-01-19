@@ -1,4 +1,14 @@
+# 🚀 Release v1.0.1
+
+### ✨ What's New
+*   **🔗 GitHub Package Registry Support**: Added automated publishing to GitHub Packages.
+*   **📦 Version Synchronization**: PyPI and NPM versions are now synchronized.
+*   **📖 Documentation Fixes**: Updated installation guides to point to the correct package versions.
+
+---
+
 # 🎉 Initial Release v1.0.0
+
 
 **git-commit-summary** is a high-performance, secure CLI tool designed to make your git commits informative and beautiful. Stop guessing what changed—visualize it instantly.
 

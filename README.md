@@ -2,6 +2,7 @@
 
 [![PyPI Version](https://img.shields.io/pypi/v/git-commit-summary.svg)](https://pypi.org/project/git-commit-summary/)
 [![NPM Version](https://img.shields.io/npm/v/otaku-git-commit-summary.svg)](https://www.npmjs.com/package/otaku-git-commit-summary)
+[![GitHub Packages](https://img.shields.io/badge/GitHub_Packages-v1.0.1-blue)](https://github.com/otaku0304/git-commit-summary/packages)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Python 3.6+](https://img.shields.io/badge/python-3.6+-blue.svg)](https://pypi.org/project/git-commit-summary/)
 [![Node 18+](https://img.shields.io/badge/node-18+-green.svg)](https://www.npmjs.com/package/otaku-git-commit-summary)
@@ -26,6 +27,12 @@ pip install git-commit-summary
 ### Node.js (via NPM)
 ```bash
 npm install -g otaku-git-commit-summary
+```
+
+### Node.js (via GitHub Packages)
+```bash
+# Authenticate with GitHub first, then:
+npm install -g @otaku0304/git-commit-summary --registry=https://npm.pkg.github.com
 ```
 
 Once installed, the command `git-commit-summary` is available globally in your terminal. You can use it in any of your projects immediately.
