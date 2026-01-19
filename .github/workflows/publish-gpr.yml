@@ -1,0 +1,30 @@
+name: Publish to GitHub Packages
+
+on:
+  release:
+    types: [published]
+  workflow_dispatch:
+
+jobs:
+  gpr-publish:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+          registry-url: 'https://npm.pkg.github.com'
+          scope: '@otaku0304'
+          
+      - name: Publish to GitHub Packages
+        run: |
+          cd node
+          npm install
+          # Rename package to match GitHub registry requirements (scoped)
+          npm pkg set name="@otaku0304/git-commit-summary"
+          npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

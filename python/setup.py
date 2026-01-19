@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setup(
     name="git-commit-summary",
-    version="1.0.0",
+    version="1.0.1",
     author="Sai Annam",
     author_email="contact@mraskchay.com",  # Placeholder or generic if not known
     description="A powerful CLI tool to summarize git commits with rich visual feedback.",
